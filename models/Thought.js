@@ -19,6 +19,9 @@ const thoughtSchema = new Schema(
       type: String,
       required: true,
     },
+    userId:{
+      type: Schema.Types.ObjectId, ref: 'User', required: true
+    },
     reactions: [reactionSchema]
   },
   {
@@ -36,6 +39,6 @@ thoughtSchema.virtual('reactionCount')
   }
 )
 
-const Thought = model('thought', thoughtSchema);
+const Thought = model('Thought', thoughtSchema);
 
-module.exports = {Thought, thoughtSchema};
+module.exports = Thought;

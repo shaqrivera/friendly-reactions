@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 const {isEmail} = require('validator');
-const {thoughtSchema} = require('./Thought');
+const Thought = require('./Thought');
 
 // Schema to create Student model
 const userSchema = new Schema(
@@ -19,8 +19,8 @@ const userSchema = new Schema(
       unique: true,
       validate: [isEmail, 'Invalid email!']
     },
-    thoughts: [thoughtSchema],
-    friends: [this],
+    thoughts: [{type: Schema.Types.ObjectId, ref: 'Thought'}],
+    friends: [{type: Schema.Types.ObjectId, ref: 'User'}],
   },
   {
     toJSON: {
@@ -36,6 +36,6 @@ userSchema.virtual('friendCount')
   }
 )
 
-const User = model('user', userSchema);
+const User = model('User', userSchema);
 
 module.exports = User;
