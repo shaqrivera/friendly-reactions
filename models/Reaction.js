@@ -23,12 +23,6 @@ const reactionSchema = new Schema(
       default: Date.now,
       get: dateFormat
     },
-    students: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Student',
-      },
-    ],
   },
   {
     toJSON: {
