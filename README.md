@@ -2,6 +2,8 @@
   # Friendly Reactions
   ## Description
   Friendly Reactions is a back-end express server, which uses Mongoose to allow the creation of users, add or remove friends, create thoughts, and post reactions to thoughts. 
+
+  (<a href="https://drive.google.com/file/d/1JPP-04S9WllsMT5mZsllsoizrB-F8gtt/view?usp=sharing" target="_blank">Link to demo video</a>)
   ## Table of Contents
   - [Installation](#installation)
   - [Usage](#usage)
