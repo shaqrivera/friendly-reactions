@@ -36,9 +36,10 @@ module.exports = {
       .then((thought) => {
         User.findOneAndUpdate(
           { _id: req.body.userId },
-              { $addToSet: { thoughts: thought._id } }
-        );
-        res.json(thought);
+              { $addToSet: { thoughts: thought._id} }
+        )
+        .then(res.json(thought))
+        
       })
       .catch((err) => res.status(500).json(err));
   },

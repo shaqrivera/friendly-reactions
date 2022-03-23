@@ -5,6 +5,7 @@
     "validator": "^13.7.0"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "seed": "node ./utils/seed.js"
   }
 }
